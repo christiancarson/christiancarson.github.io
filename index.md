@@ -1,6 +1,6 @@
 # Christian Carson
 
-Hi MDS! My name is Christian Carson, but you can call me Critty. I'm a rising conservation ecologist looking to improve my skills in data science. This is my portfolio showcasing some of my work as it applies to MDS.
+Hi MDS! My name is Christian Carson, but you can call me Critty. I'm a rising conservation scientist looking to improve my skills in data science. This is my portfolio showcasing some of my work as it applies to MDS.
 
 ## About Me
 
