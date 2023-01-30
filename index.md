@@ -1,6 +1,6 @@
 # My Portfolio
 
-Hi there! I'm a [YOUR NAME] and I'm a [JOB TITLE/DESCRIPTION]. This is my portfolio showcasing some of my work.
+Hi MDS! I'm Christian Carson, but you can call me Critty. I'm a rising conservation ecologist looking to improve my skills in data science. This is my portfolio showcasing some of my work as it applies to MDS.
 
 ## About Me
 
