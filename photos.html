@@ -29,33 +29,18 @@
 
         <!-- Photo Gallery Section -->
         <section id="gallery">
-            <div class="slideshow-container">
-
-                <!-- Full-width images with captions -->
-                <div class="mySlides fade">
-                    <img src="images/photo1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/photo2.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="images/photo3.jpg" style="width:100%">
-                </div>
-
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+            <div class="slideshow-container" id="slideshow-container">
+                <!-- Images will be loaded here dynamically -->
             </div>
             <br>
 
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
             <!-- Dots/circles to indicate the number of slides -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
+            <div style="text-align:center" id="dots-container">
+                <!-- Dots will be loaded here dynamically -->
             </div>
         </section>
 
@@ -83,8 +68,24 @@
 
     <!-- Slideshow Script -->
     <script>
+    const folder = 'film';  // Your folder name
+    const imageFormats = ['jpg', 'jpeg', 'png', 'gif'];  // Image formats to look for
     let slideIndex = 1;
-    showSlides(slideIndex);
+    let images = [];
+
+    function preloadImages() {
+        for (let i = 1; i <= 10; i++) {  // Replace 10 with the estimated number of images or dynamically detect the number
+            imageFormats.forEach(format => {
+                let img = new Image();
+                img.src = folder + '/photo' + i + '.' + format;
+                img.onload = () => {
+                    images.push(img.src);
+                    document.getElementById('slideshow-container').innerHTML += '<div class="mySlides fade"><img src="' + img.src + '" style="width:100%"></div>';
+                    document.getElementById('dots-container').innerHTML += '<span class="dot" onclick="currentSlide(' + images.length + ')"></span>';
+                };
+            });
+        }
+    }
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
@@ -109,6 +110,10 @@
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
     }
+
+    // Preload images and initialize the slideshow
+    preloadImages();
+    showSlides(slideIndex);
     </script>
 
 </body>
