@@ -23,14 +23,22 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="cv.html">CV</a></li>
-                <li><a href="photos.html">Photos</a></li>
+                <li><a href="photos.php">Photos</a></li>
             </ul>
         </nav>
 
         <!-- Photo Gallery Section -->
         <section id="gallery">
             <div class="slideshow-container" id="slideshow-container">
-                <!-- Images will be loaded here dynamically -->
+                <?php
+                $dir = 'film/';
+                $images = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+                foreach($images as $index => $image) {
+                    echo '<div class="mySlides fade">';
+                    echo '<img src="'.$image.'" style="width:100%">';
+                    echo '</div>';
+                }
+                ?>
             </div>
             <br>
 
@@ -40,7 +48,11 @@
 
             <!-- Dots/circles to indicate the number of slides -->
             <div style="text-align:center" id="dots-container">
-                <!-- Dots will be loaded here dynamically -->
+                <?php
+                for($i = 1; $i <= count($images); $i++) {
+                    echo '<span class="dot" onclick="currentSlide('.$i.')"></span> ';
+                }
+                ?>
             </div>
         </section>
 
@@ -68,24 +80,8 @@
 
     <!-- Slideshow Script -->
     <script>
-    const folder = 'film';  // Your folder name
-    const imageFormats = ['jpg', 'jpeg', 'png', 'gif'];  // Image formats to look for
     let slideIndex = 1;
-    let images = [];
-
-    function preloadImages() {
-        for (let i = 1; i <= 10; i++) {  // Replace 10 with the estimated number of images or dynamically detect the number
-            imageFormats.forEach(format => {
-                let img = new Image();
-                img.src = folder + '/photo' + i + '.' + format;
-                img.onload = () => {
-                    images.push(img.src);
-                    document.getElementById('slideshow-container').innerHTML += '<div class="mySlides fade"><img src="' + img.src + '" style="width:100%"></div>';
-                    document.getElementById('dots-container').innerHTML += '<span class="dot" onclick="currentSlide(' + images.length + ')"></span>';
-                };
-            });
-        }
-    }
+    showSlides(slideIndex);
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
@@ -110,10 +106,6 @@
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
     }
-
-    // Preload images and initialize the slideshow
-    preloadImages();
-    showSlides(slideIndex);
     </script>
 
 </body>
