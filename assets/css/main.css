@@ -2551,6 +2551,21 @@ input, select, textarea {
 			cursor: default;
 		}
 
+/* Navigation */
+
+	nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em 1.5em;
+		list-style: none;
+		padding: 0;
+	}
+
+	nav ul li a {
+		font-size: 1.2em;
+		font-weight: 700;
+	}
+
 /* Work Item */
 
 	.work-item {
@@ -2562,8 +2577,9 @@ input, select, textarea {
 		}
 
 		.work-item h3 {
-			font-size: 1em;
+			font-size: 1.3em;
 			margin: 0 0 0.5em 0;
+			font-weight: 700;
 		}
 
 		.work-item p {
@@ -2635,13 +2651,14 @@ input, select, textarea {
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.9);
+			color: #ffffff;
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
-			background: rgba(0, 0, 0, 0.5);
+			background: rgba(0, 0, 0, 0.7);
 			padding: 0.25em 0.75em;
 			border-radius: 4px;
+			font-weight: 700;
 		}
 
 		#header .image.avatar {
