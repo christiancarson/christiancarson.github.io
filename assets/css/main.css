@@ -2635,10 +2635,13 @@ input, select, textarea {
 		}
 
 		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 0.9);
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
+			background: rgba(0, 0, 0, 0.5);
+			padding: 0.25em 0.75em;
+			border-radius: 4px;
 		}
 
 		#header .image.avatar {
