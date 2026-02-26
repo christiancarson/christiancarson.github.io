@@ -2553,15 +2553,22 @@ input, select, textarea {
 
 /* Navigation */
 
-	nav ul {
-		display: flex;
+	#main > nav ul {
+		display: flex !important;
 		flex-wrap: wrap;
+		flex-direction: row !important;
 		gap: 0.5em 1.5em;
-		list-style: none;
+		list-style: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	#main > nav ul li {
+		display: inline-block !important;
 		padding: 0;
 	}
 
-	nav ul li a {
+	#main > nav ul li a {
 		font-size: 1.2em;
 		font-weight: 700;
 	}
