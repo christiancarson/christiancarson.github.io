@@ -2660,18 +2660,18 @@ input, select, textarea {
 
 		#header h1 {
 			color: #ffffff;
-			font-size: 1.35em;
+			font-size: 1.75em;
 			line-height: 1.75em;
 			margin: 0;
 			background: rgba(0, 0, 0, 0.7);
 			padding: 0.25em 0.75em;
 			border-radius: 4px;
-			font-weight: 700;
+			font-weight: 900;
 		}
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
-			width: 6.25em;
+			width: 9em;
 		}
 
 /* Footer */
